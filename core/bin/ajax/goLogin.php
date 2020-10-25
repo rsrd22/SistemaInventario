@@ -1,6 +1,6 @@
 <?php
 
-if(!empty($_POST['user']) and !empty($_POST['pass'])){
+if (!empty($_POST['user']) and !empty($_POST['pass'])) {
 	$db = new Conexion();
 	$user = $db->real_escape_string($_POST['user']);
 	$pass = Encrypt($_POST['pass']);
@@ -8,7 +8,7 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
 	$sql = $db->query($con);
 
 	$rs = $db->rows($sql);
-	if($rs > 0){
+	if ($rs > 0) {
 		$informacion = $db->recorrer($sql);
 		$_SESSION['app_id'] = $informacion['pk_usuario'];
 		$_SESSION['app_usuario'] = $informacion['usuario'];
@@ -17,16 +17,16 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
 		## if($_POST['session']){
 		##	ini_set('session.cookie_lifetime', time()+(60*60*24));
 		## }
-		
-		if($informacion['estado'] == 'Activo'){
+
+		if ($informacion['estado'] == 'Activo') {
 			echo 1;
-		}else{
+		} else {
 			echo '<div class="alert alert-dismissible alert-danger">
 				  <button type="button" class="close" data-dismiss="alert">X</button>
 				  <strong>Error:</strong> El usuario se encuentra INACTIVO. <br>Por comuniquese con el administrador del sistema
-                 </div>';	
+                 </div>';
 		}
-	}else{
+	} else {
 		echo '<div class="alert alert-dismissible alert-danger">
 			  <button type="button" class="close" data-dismiss="alert">X</button>
 			  <strong>Error:</strong> Las credenciales son incorrectas.
@@ -36,5 +36,3 @@ if(!empty($_POST['user']) and !empty($_POST['pass'])){
 	$db->liberar($sql);
 	$db->close();
 }
-
-?>

@@ -23,16 +23,16 @@ function goLogin(){
 	session = Item('session_login').checked ? true : false;
 
 	form = 'user='+user+'&pass='+pass+'&session='+session;
-	//window.alert('form--->'+form);
 	connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 	connect.onreadystatechange = function(){
 		if(connect.readyState == 4 && connect.status == 200){
 			if(connect.responseText == 1){
-				result = '<div class="alert alert-dismissible alert-success">'
-				
-				result += ' <h4>Conectado!</h4>';
-				result += ' <p><strong>Te estamos redireccionando.</strong></p>';
-				result += '</div>';
+				result = `
+				<div class="alert alert-dismissible alert-success">
+				 <h4>Conectado!</h4>
+				 <p><strong>Te estamos redireccionando.</strong></p>
+				</div>
+				`;
 				Item('_AJAX_LOGIN_').innerHTML= result;
 				location.reload();
 			}else{
@@ -40,11 +40,11 @@ function goLogin(){
 			}
 			console.log(connect.responseText);
 		}else if(connect.readyState != 4){
-			result = '<div class="alert alert-dismissible alert-warning">'
-			result += ' <button type="button" class="close" data-dismiss="alert">X</button>';
-			result += ' <h4>Procesando...</h4>';
-			result += ' <p><strong>Estamos intentando logearte.</strong></p>';
-			result += '</div>';
+			result = `<div class="alert alert-dismissible alert-warning">
+			 <button type="button" class="close" data-dismiss="alert">X</button>
+			 <h4>Procesando...</h4>
+			 <p><strong>Estamos intentando logearte.</strong></p>
+			</div>`;
 			Item('_AJAX_LOGIN_').innerHTML= result;
 		}
 	}

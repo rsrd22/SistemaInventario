@@ -1,5 +1,3 @@
 <?php
 
-include(HTML_DIR.'index/login.php');
-
-?>
+include(HTML_DIR . 'index/login.php');
