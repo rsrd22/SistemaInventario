@@ -7,19 +7,19 @@ include(HTML_DIR . 'overall/header.php');
 	<script src="views/js/funciones_login.js"></script>
 	<section class="jumbotron ">
 		<div class="container">
-			<!-- <img src="img/unimag.png" alt="" height="150"> -->
 			<h1>Inventario</h1>
 		</div>
 	</section>
 	<!--LOGIN-->
-	<section>
+	<section class="login">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<div class="col-xs-12">
 					<div id='_AJAX_LOGIN_' class="form-wrap">
 
 					</div>
 				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
 				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
 					<div class="card">
@@ -40,7 +40,7 @@ include(HTML_DIR . 'overall/header.php');
 									<input type="checkbox" id="session_login" checked>
 									<label>Recordarme</label>
 								</div>
-								<button type="button" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Entrar" onclick="goLogin();">Entrar</button>
+								<button type="button" id="btn-login" class="btn btn-lg btn-block btn-performance" value="Entrar" onclick="goLogin();">Entrar</button>
 							</div>
 						</div>
 						<div class="card-footer">

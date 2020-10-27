@@ -4,15 +4,16 @@ if (!empty($_POST['user']) and !empty($_POST['pass'])) {
 	$db = new Conexion();
 	$user = $db->real_escape_string($_POST['user']);
 	$pass = Encrypt($_POST['pass']);
+	echo $user.'-----'.$pass;
 	$con = "SELECT * FROM usuarios WHERE usuario = '$user' AND clave = '$pass' LIMIT 1;";
 	$sql = $db->query($con);
 
 	$rs = $db->rows($sql);
 	if ($rs > 0) {
 		$informacion = $db->recorrer($sql);
-		$_SESSION['app_id'] = $informacion['pk_usuario'];
+		$_SESSION['app_id'] = $informacion['id'];
 		$_SESSION['app_usuario'] = $informacion['usuario'];
-		$_SESSION['app_id_perfil'] = $informacion['fk_perfil'];
+		$_SESSION['app_id_perfil'] = $informacion['id_perfil'];
 
 		## if($_POST['session']){
 		##	ini_set('session.cookie_lifetime', time()+(60*60*24));

@@ -1,4 +1,13 @@
 /*------*/
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	min-width: 100vh;
+	flex-wrap: wrap;
+}
+
+
 
 .navbar {	
 	margin-bottom: 0;	
@@ -9,12 +18,30 @@
 }
 
 .jumbotron {
-	background: #ccc;
+	background: #2b9b51; 
 	color: #fff;
-	padding: 20px 0; 
+	padding: 0px 0; 
 	margin-bottom: 0;
+	width: 100%;
+}
+.login{
+	width: 100%;
+	padding: 0 auto;
 }
 
+.btn-performance{
+	background: #2b9b51; 
+	color:#fff;
+	text-align: center;
+	font-weight: bold;
+}
+
+.btn-performance:hover{
+	background: #37bb63; 
+	color:#fff;
+	text-align: center;
+	font-weight: bold;
+}
 /*--POST--*/
 
 .main {
@@ -48,10 +75,13 @@
 
 /*** FOOTER*****/
 
-.footer{
-	background: #282A2B;
+footer{
+	align-self: flex-end;
+	background: #3ce797;
+	line-height: 3;
 	color: #fff;
-	padding: 18px 30px;
+	text-align: center;
+	width: 100%;
 
 }
 
