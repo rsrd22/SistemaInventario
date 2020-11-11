@@ -12,8 +12,9 @@ define('APP_URL', 'http://localhost/SistemaInventario/');
 
 
 require('core/models/class.Conexion.php');
+require('core/models/class.Categorias.php');
 require('core/bin/functions/Encrypt.php');
-// require('core/bin/functions/Inventario.php');
+require('core/bin/functions/Categorias.php');
 // require('core/bin/functions/Servicios.php');
 // require('core/bin/functions/Articulos.php');
 // require('core/bin/functions/Egresos.php');
@@ -21,7 +22,7 @@ require('core/bin/functions/Encrypt.php');
 // require('core/bin/functions/PaginadorServicios.php');
 // require('core/bin/functions/Perfiles.php');
 
-// $_perfiles = Perfiles();
+$_categorias = Categorias();
 // $_inventario = Inventario();
 // $_servicios = Servicios();
 // $_articulos = Articulos($_inventario, $_servicios);

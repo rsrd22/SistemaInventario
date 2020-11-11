@@ -4,7 +4,7 @@ if (!empty($_POST['user']) and !empty($_POST['pass'])) {
 	$db = new Conexion();
 	$user = $db->real_escape_string($_POST['user']);
 	$pass = Encrypt($_POST['pass']);
-	echo $user.'-----'.$pass;
+	// echo $user.'-----'.$pass;
 	$con = "SELECT * FROM usuarios WHERE usuario = '$user' AND clave = '$pass' LIMIT 1;";
 	$sql = $db->query($con);
 
